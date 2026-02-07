@@ -415,3 +415,22 @@ nav > *,
   scrollbar-width: thin;
   scrollbar-color: #1e293b var(--bg-deep);
 }
+
+/* --- FIX: OCULTAR CONTACTO EN MÓVILES --- */
+
+@media (max-width: 480px) {
+    /* Ocultamos el contenedor del link en el nav bar */
+    .nav-cta {
+        display: none !important;
+    }
+
+    /* Opcional: Centramos el logo para que se vea más equilibrado */
+    .nav-container {
+        justify-content: center !important;
+    }
+    
+    /* Le damos un poco más de tamaño al logo ya que ahora tiene espacio */
+    .logo-group {
+        transform: scale(1.1);
+    }
+}
