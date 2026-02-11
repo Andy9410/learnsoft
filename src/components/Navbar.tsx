@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Code2, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import CalendlyModal from "@/components/CalendlyModal";
 
 const navLinks = [
   { label: "Apoyo Universitario", href: "/apoyo-universitario", isRoute: true },
@@ -12,6 +13,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [calendlyOpen, setCalendlyOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
@@ -38,9 +40,9 @@ const Navbar = () => {
           )}
         </div>
 
-        <a href="#contacto" className="hidden rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 md:inline-flex">
+        <button onClick={() => setCalendlyOpen(true)} className="hidden rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 md:inline-flex">
           Empezar ahora
-        </a>
+        </button>
 
         {/* Mobile toggle */}
         <button onClick={() => setOpen(!open)} className="md:hidden text-primary" aria-label="Menu">
@@ -62,11 +64,12 @@ const Navbar = () => {
               </a>
             )
           )}
-          <a href="#contacto" onClick={() => setOpen(false)} className="mt-2 block rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground">
+          <button onClick={() => { setOpen(false); setCalendlyOpen(true); }} className="mt-2 block w-full rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-semibold text-primary-foreground">
             Empezar ahora
-          </a>
+          </button>
         </div>
       )}
+      <CalendlyModal open={calendlyOpen} onOpenChange={setCalendlyOpen} />
     </header>
   );
 };

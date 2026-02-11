@@ -5,6 +5,7 @@ import ApoyoSection from "@/components/ApoyoSection";
 import CarreraSection from "@/components/CarreraSection";
 import IASection from "@/components/IASection";
 import IncludesSection from "@/components/IncludesSection";
+import MentorSection from "@/components/MentorSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -17,6 +18,7 @@ const Index = () => (
       <ApoyoSection />
       <CarreraSection />
       <IASection />
+      <MentorSection />
       <IncludesSection />
       <CTASection />
     </main>
