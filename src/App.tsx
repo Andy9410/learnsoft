@@ -20,7 +20,6 @@ const App = () => (
       <HashRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/learnsoft" element={<Index />} /> 
           <Route path="/" element={<Index />} />  
           <Route path="/apoyo-universitario" element={<ApoyoPage />} />
           <Route path="/carrera-it" element={<CarreraPage />} />
